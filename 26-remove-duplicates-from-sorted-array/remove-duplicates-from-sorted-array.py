@@ -4,15 +4,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        if not nums:
-            return 0
-
-        k = 1 
-
-        for i in range(1,len(nums)):
-            if nums[i] != nums[i-1]:
-                nums[k] = nums[i]
-                k +=1
+        k = 0
+        for key, _ in groupby(nums):
+            nums[k]= key
+            k += 1
 
 
         return k 
