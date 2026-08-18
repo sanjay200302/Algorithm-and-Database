@@ -7,13 +7,13 @@ class Solution(object):
 
         if not strs:
             return ""
+        
+        s = min(strs)
+        l = max(strs)
 
-        p = strs[0]
 
-        for s in strs[1:]:
-            while not s.startswith(p):
-                p = p[:-1]
-                if not p:
-                    return ""
-        return p
+        for i in range (len(s)):
+            if s[i] != l[i]:
+                return s [:i]
+        return s
         
