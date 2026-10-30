@@ -1,14 +1,14 @@
 class Solution:
     def mapWordWeights(self, words: List[str], weights: List[int]) -> str:
-        ans = []
-
-        for word in words :
+        a = []
+         
+        for word in words:
             total = 0 
 
             for ch in word:
-                total += weights[ord(ch) - ord('a')]
+                total += weights[ord(ch)-ord('a')]
 
             rem = total % 26
+            a.append(chr(ord('z')-rem))
 
-            ans.append(chr(ord('z')-rem))
-        return "".join(ans) 
+        return "".join(a)  
