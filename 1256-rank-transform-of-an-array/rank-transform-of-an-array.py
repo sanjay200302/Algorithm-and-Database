@@ -1,12 +1,8 @@
-class Solution(object):
-    def arrayRankTransform(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: List[int]
-        """
-        s_u = sorted(set(arr))
+class Solution:
+    def arrayRankTransform(self, arr: list[int]) -> list[int]:
+        rank = {}
 
-        r_m = {num: i+1 for i, num in enumerate(s_u)}
+        for i, num in enumerate(sorted(set(arr)), 1):
+            rank[num] = i
 
-
-        return [r_m[num] for num in arr]
+        return [rank[num] for num in arr]
