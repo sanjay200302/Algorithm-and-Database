@@ -3,4 +3,3 @@ class Solution:
         sumodd = n*n
         sumeven = n*(n+1)
         return gcd(sumodd,sumeven)
-        
